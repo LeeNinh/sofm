@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html layout:decorate="/home.html">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/reset.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <title>Danh Sách Sản Phẩm</title>
+
+</head>
+<body>
+<div layout:fragment="body">
+<form th:action="@{/product/search}" method="get">
+  <div id="wrapper">
+    <div class="headline">
+      <h3>Áo nam nữ các loại</h3>
+    </div>
+    <ul class="categorys">
+      <li th:each="p : ${productList}">
+        <div class="category-item">
+          <div class="category-top">
+            <a href="" class="category-thumb">
+              <img th:src="@{'/product/download?filename=' + ${p.image}} " alt="">
+            </a>
+            <a th:href="@{'/add-to-cart?id=' + ${p.id}}" class="watch-now">Mua ngay</a>
+          </div>
+          <div class="category-info">
+            <a th:text="${p.category.name}"></a>
+            <a href="" class="category-name" th:text="${p.name}"></a>
+            <a href="" class="category-price" th:text="${p.price} +' vnđ'"></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>
+</div>
+</body>
+</html>

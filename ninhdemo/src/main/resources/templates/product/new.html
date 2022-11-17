@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" th:href="@{/css/reset.css}">
+  <link rel="stylesheet" th:href="@{/css/crud.css}">
+  <title> new</title>
+</head>
+<body>
+<div id="wrapper">
+  <form th:action="@{/product/new}" id="form-crud" method="post"
+        enctype="multipart/form-data">
+    <h1 class="form-heading">Điền Thông Tin</h1>
+    <div class="form-group">
+      <label class="form-heading">Ảnh</label>
+      <input type="file" name="file" accept="">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-input" name="name" placeholder="Enter Tên...">
+
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-input" name="description" placeholder="Mô tả sản phẩm . . .">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-input" name="createdAt" placeholder="dd/MM/yyyy . . .">
+    </div>
+    <div>  <label class="form-label">Loại hàng:</label>
+      <select name="category.id">
+        <option th:each="c : ${categoryList}" th:value="${c.id}"
+                th:text="${c.name}">chọn</option>
+      </select>
+    </div>
+    <div>
+      <input type="submit" value="Thêm sản phẩm" class="form-submit">
+    </div>
+  </form>
+</div>
+</body>
+</html>

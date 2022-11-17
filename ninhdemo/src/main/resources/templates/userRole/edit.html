@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html layout:decorate="/templates.html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/crud.css}">
+    <title>UserRole Edit</title>
+</head>
+<body>
+<div layout:fragment="body">
+    <h1>Edit UserRoler</h1>
+
+    <form th:object="${userrole}" th:action="@{/userrole/edit}" method="post">
+        <div>
+            <input type="text" name="id"
+                   th:value="${userrole.getId}"
+                   placeholder="Enter id ..." readonly>
+        </div>
+        <div>
+            <input type="text" name="role"
+                   th:value="${userrole.getRole}"
+                   placeholder="Enter name...">
+            <p th:errors="*{role}"></p>
+        </div>
+        <div>  <label class="form-label">userId:</label>
+            <select name="user.id">
+                <option th:each="u : ${userList}"
+                        th:text="${u.id}">chọn</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

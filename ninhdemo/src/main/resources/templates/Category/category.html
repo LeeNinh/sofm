@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Danh Sách Sản Phẩm</title>
+</head>
+<body>
+<form th:action="@{/category/search}" method="get">
+    <div id="wrapper">
+        <div class="headline">
+            <h3>Sản phẩm bán chạy</h3>
+        </div>
+        <ul class="categorys">
+            <li>
+                <div class="category-item">
+                    <div class="category-top">
+                        <a href="" class="category-thumb">
+                            <img th:src="@{/images/1.png}" alt="">
+                        </a>
+                        <a th:href="@{/product/search}" class="watch-now">Xem ngay</a>
+                    </div>
+                    <div class="category-info">
+                        <a th:href="@{/product/search}" class="category-cat">Áo</a>
+                        <a href="" class="category-name">Áo thu đông nữ</a>
+                        <a href="" class="category-price">300.000vnđ</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="category-item">
+                    <div class="category-top">
+                        <a href="" class="category-thumb">
+                            <img th:src="@{/images/2.png}" alt="">
+                        </a>
+                        <a href="" class="watch-now">Xem ngay</a>
+                    </div>
+                    <div class="category-info">
+                        <a th:href="@{/product/search}" class="category-cat">Áo</a>
+                        <a href="" class="category-name">Áo thu đông nam</a>
+                        <a href="" class="category-price">300.000vnđ</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="category-item">
+                    <div class="category-top">
+                        <a href="" class="category-thumb">
+                            <img th:src="@{/images/3.png}" alt="">
+                        </a>
+                        <a href="" class="watch-now">Xem ngay</a>
+                    </div>
+                    <div class="category-info">
+                        <a th:href="@{/product/search}" class="category-cat">Quần</a>
+                        <a href="" class="category-name">Quần nam hot 2022</a>
+                        <a href="" class="category-price">300.000vnđ</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="category-item">
+                    <div class="category-top">
+                        <a href="" class="category-thumb">
+                            <img th:src="@{/images/4.png}" alt="">
+                        </a>
+                        <a href="" class="watch-now">Xem ngay</a>
+                    </div>
+                    <div class="category-info">
+                        <a href="" class="category-cat">Bộ</a>
+                        <a href="" class="category-name">Sét thể thao nữ</a>
+                        <a href="" class="category-price">300.000vnđ</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</form>
+</body>
+</html>

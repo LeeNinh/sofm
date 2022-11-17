@@ -1,0 +1,20 @@
+
+<ul class="list-group" th:fragment="main-menu">
+  <li class="list-group-item">
+    <a th:href="@{/home}" th:text="#{label.home}"></a>
+  </li>
+
+  <li class="list-group-item">
+    <a th:href="@{/person}" th:text="#{label.person}"></a>
+  </li>
+
+  <li class="list-group-item">
+    <a th:href="@{/change-lang?lang=vi}">Viet</a>
+    <a th:href="@{/change-lang?lang=en}">Eng</a>
+  </li>
+</ul>
+
+<ul class="nav justify-content-center" th:fragment="menu-footer">
+  <li class="nav-item"><a class="nav-link" th:href="@{/about-us}" th:text="#{label.about}"></a></li>
+  <li class="nav-item"><a class="nav-link" th:href="@{/person}" th:text="#{label.person}"></a></li>
+</ul>

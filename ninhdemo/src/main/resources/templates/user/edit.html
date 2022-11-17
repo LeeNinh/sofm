@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/crud.css}">
+    <title>User Edit</title>
+</head>
+<body>
+<div id="wrapper">
+    <form th:object="${user}" th:action="@{/user/edit}" id="form-crud" method="post"
+          enctype="multipart/form-data">
+        <h1 class="form-heading">Sửa thông tin</h1>
+        <div class="form-group">
+            <input type="number" class="form-input" name="id" th:value="${user.getId}" placeholder="Enter id..." readonly>
+        </div>
+        <div class="form-group">
+            <label class="form-heading">Avatar</label>
+            <input type="file" name="file" accept="">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-input" name="name" th:value="${user.getName}" placeholder="Enter Tên...">
+            <p th:errors="*{name}"></p>
+
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-input" name="username" th:value="${user.getUsername}" placeholder="Tên đăng nhập . . ."readonly>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-input" name="password" th:value="${user.getPassword}" placeholder="Mật khẩu . . .">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-input" name="birthdate" th:value="${user.getBirthdate}" placeholder="dd/MM/yyyy . . .">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-input" name="email" th:value="${user.getEmail}" placeholder="email . . .">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-input" name="createdAt" th:value="${user.getCreatedAt}" placeholder="dd/MM/yyyy . . .">
+        </div>
+        <input type="submit" value="Update" class="form-submit">
+    </form>
+</div>
+</body>
+</html>

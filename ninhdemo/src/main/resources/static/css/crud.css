@@ -1,0 +1,93 @@
+body {
+    background: url('../images/img_2.png');
+    background-size: cover;
+    background-position-y: -60px;
+    font-size: 1px;
+}
+
+#wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form-crud{
+    max-width: 350px;
+    background: rgb(5, 5, 5);
+    flex-grow: 1;
+    padding: 30px 30px 40px;
+    box-shadow: 0px 0px 17px 2px rgb(255, 255, 255);
+}
+.form-heading{
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.form-group{
+    border-bottom: 1px solid #ffffff;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.form-group i{
+    color: #ffffff;
+    font-size: 14px;
+}
+.form-input{
+    background: transparent;
+    border: 0;
+    outline: 0px;
+    color: #ffffff;
+    flex-grow: 1;
+}
+.form-input::placeholder{
+    color: #00fafa;
+}
+.form-submit{
+    background: transparent;
+    border: 1px solid #f5f5f5;
+    color: #ffffff;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    transition: 0.25s ease-in-out;
+    margin-top: 20px;
+}
+.form-submit:hover{
+    border: 1px solid #0019ff;
+}
+body {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    width: 95%;
+}
+
+table, td, th {
+    border: 1px solid #333;
+    border-collapse: collapse;
+}
+
+th, th {
+    padding: 6px 10px;
+}
+
+table thead th {
+    text-align: left;
+}
+
+table.table-dark {
+    background: aliceblue;
+    color: black;
+}
+
+table.table-hover tbody tr:nth-child(odd) {
+    background: bisque;
+}
+
+tr.next-page {
+    background: aqua;
+}

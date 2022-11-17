@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html layout:decorate="/templates.html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/crud.css}">
+    <title>UserRole</title>
+</head>
+<body>
+<div layout:fragment="body">
+    <h1>UserRole New</h1>
+
+    <form th:object="${userrole}" th:action="@{/userrole/new}" method="post">
+
+        <div>
+            <input type="text" name="role">
+            <p th:errors="*{role}"></p>
+        </div>
+        <div>  <label class="form-label">userId:</label>
+            <select name="user.id">
+                <option th:each="u : ${userList}"
+                        th:text="${u.id}">chọn</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Create</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

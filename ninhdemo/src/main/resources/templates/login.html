@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html layout="/menu.html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <title>Login</title>
+
+</head>
+<body>
+<div th:replace="/home.html :: nav"></div>
+<div layout:fragment="body">
+<div id="wrapper" >
+    <form th:action="@{/login}" id="form-login" method="post">
+        <h1 class="form-heading">Đăng Nhập</h1>
+        <div class="form-group">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" class="form-input" name="username" placeholder="Tên đăng nhập . . .">
+        </div>
+        <div class="form-group">
+            <i class="fa-solid fa-key"></i>
+            <input type="password" class="form-input" name="password" placeholder="Mật khẩu . . .">
+        </div>
+        <input type="submit" value="Đăng Nhập" class="form-submit">
+        <div class="form-group">
+            <div class="form-input">
+                Bạn chưa có tài khoản?<a th:href="@{/user/new}">Đắng ký</a>
+            </div>
+            <div class="form-input">
+                <a href="#">Quên mật khẩu?</a>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</body>
+</html>

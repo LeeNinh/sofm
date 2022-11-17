@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1></h1>
+<style>
+  body {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  table {
+    width: 90%;
+  }
+
+  table, td, th {
+    border: 1px solid #333;
+    border-collapse: collapse;
+  }
+
+  th, th {
+    padding: 6px 10px;
+  }
+
+  table thead th {
+    text-align: left;
+  }
+
+  table.table-dark {
+    background: aliceblue;
+    color: black;
+  }
+
+  table.table-hover tbody tr:nth-child(odd) {
+    background: bisque;
+  }
+
+  tr.next-page {
+    background: aqua;
+  }
+</style>
+<table  class="table table-dark table-hover" th:fragment="nav">
+  <thead>
+  <tr>
+
+    <th><a th:href="@{/user/search}">User</a></th>
+    <th><a th:href="@{/userrole/search}">UserRole</a></th>
+  </tr>
+  </thead>
+</table>
+
+<div layout:fragment="body">
+  <!--    nội dung bên trong sẽ được thay đổi--></div>
+</body>
+</html>
