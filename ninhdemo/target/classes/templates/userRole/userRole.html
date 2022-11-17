@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html layout:decorate="/templates.html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/crud.css}">
+    <title>UserRole</title>
+</head>
+<body>
+<div layout:fragment="body">
+    <h1>UserRole</h1>
+
+    <form th:action="@{/userrole/search}" method="get">
+        <div>
+            <input type="text" name="role"
+                   placeholder="Enter role ...">
+            <input type="text" name="page"
+                   placeholder="Enter page ..." th:value="${page}">
+            <input type="text" name="size"
+                   placeholder="Enter size ..." th:value="${size}">
+            <label class="form-label">User Id:</label>
+            <select name="byId" >
+                <option value="">Chọn</option>
+                <option th:each="u : ${userList}" th:value="${u.id}"
+                        th:text="${u.id}" th:selected="${u.id == id}"></option>
+            </select>
+            <button type="submit">Search</button>
+        </div>
+    </form>
+    <div class="container">
+        <table  class="table table-dark table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Role</th>
+                <th>User</th>
+
+                <th><a th:href="@{/userrole/new}">New</a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="u : ${userroleList}">
+                <td th:text="${u.Id}"></td>
+                <td th:text="${u.Role}"></td>
+                <td th:text="${u.user.name}"></td>
+                <td><a th:href="@{edit(id=${u.getId})}">Edit</a> | <a th:href="@{delete(id=${u.getId})}">Delete</a></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4">Tổng <span th:text="${count}"></span> bản
+                    ghi
+                </td>
+            </tr>
+            <tr class="next-page">
+                <td><a th:href="@{'/userrole/search?page=' + ${page + 1} + '&size=' + ${size}}">next page</a></td>
+
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+</body>
+</html>

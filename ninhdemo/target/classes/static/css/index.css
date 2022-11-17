@@ -1,0 +1,14 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+.modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 700px;
+    height: 100%;
+    right: 0px;
+}
+.modal-content {
+    height: 100%;
+}

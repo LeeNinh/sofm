@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/reset.css}">
+  <link rel="stylesheet" th:href="@{/css/style-cart.css}">
+  <title>Cart</title>
+</head>
+<body>
+<div>
+  <table class="table table-dark table-hover">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tên</th>
+      <th>Giá</th>
+      <th>Số lượng</th>
+      <th>Tạm tính</th>
+      <th>Chọn</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${session.cart}">
+      <td th:text="${entry.key}"></td>
+      <td th:text="${entry.value.product.name}"></td>
+      <td th:text="${entry.value.buyPrice}"></td>
+      <td th:text="${entry.value.quantity}"></td>
+      <td th:text="${entry.value.quantity * entry.value.buyPrice}"></td>
+      <td>
+        <a th:href="@{'/delete-cart?id=' + ${entry.key}}"> xóa
+        </a>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><h6>Tổng tiền</h6></td>
+      <td th:text="${total}"></td>
+    </tr>
+    </tfoot>
+  </table>
+  <a th:href="@{/member/bills}">Thanh toán</a>
+</div>
+</body>
+</html>
